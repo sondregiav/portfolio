@@ -22,11 +22,6 @@
 
 <body>
 
-    <!-- Skip Link -->
-    <a class="skip-link" href="#main-content">
-        Skip to main content
-    </a>
-
 
     <!-- Header -->
     <header class="header">
@@ -38,7 +33,7 @@
                 class="logo"
                 aria-label="Sondre - Home"
             >
-                S<span>.</span>
+                SG<span>.</span>
             </a>
 
 
@@ -401,54 +396,574 @@
         </section>
 
 
-        <!-- Projects -->
-        <section
-            id="projects"
-            class="projects section"
-            aria-labelledby="projects-title"
-        >
+        <!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-            <div class="container">
+<section class="section projects-section" id="projects">
 
+    <div class="container">
 
-                <header class="section-header">
+        <div class="section-header reveal">
 
-                    <p class="section-label">
-                        Projects
-                    </p>
+            <span class="section-label">
+                Portfolio
+            </span>
 
-                    <h2 id="projects-title">
-                        Selected work and portfolio projects.
-                    </h2>
+            <h2 class="section-title">
+                Featured Projects
+            </h2>
 
-                    <p class="section-description">
-                        A selection of projects built to demonstrate my
-                        front-end development skills, problem-solving approach,
-                        and ability to build practical web applications.
-                    </p>
+            <p class="section-description">
+                A selection of projects built to demonstrate practical front-end
+                development skills, including responsive design, API integration,
+                state management, LocalStorage, and interactive user interfaces.
+            </p>
 
-                </header>
+        </div>
 
 
-                <div
-                    class="projects-grid"
-                    id="projectsGrid"
-                    aria-live="polite"
-                >
-                    <!-- Projects rendered with JavaScript -->
+        <!-- PROJECT FILTERS -->
+
+        <div class="project-filters reveal">
+
+            <button
+                class="project-filter active"
+                type="button"
+                data-filter="all"
+            >
+                All Projects
+            </button>
+
+            <button
+                class="project-filter"
+                type="button"
+                data-filter="javascript"
+            >
+                JavaScript
+            </button>
+
+            <button
+                class="project-filter"
+                type="button"
+                data-filter="api"
+            >
+                API
+            </button>
+
+            <button
+                class="project-filter"
+                type="button"
+                data-filter="dashboard"
+            >
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT GRID -->
+
+        <div class="projects-grid">
+
+
+            <!-- =========================================
+                 PROJECT 1
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript dashboard"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/personal-dashboard.png"
+                        alt="Personal Dashboard application interface"
+                        loading="lazy"
+                    >
+
                 </div>
 
 
-                <p
-                    class="projects-status"
-                    id="projectsStatus"
-                >
-                    Loading projects...
-                </p>
+                <div class="project-content">
 
-            </div>
+                    <div class="project-meta">
 
-        </section>
+                        <span class="project-tag">
+                            Featured
+                        </span>
+
+                        <span class="project-tag">
+                            Dashboard
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Personal Dashboard
+                    </h3>
+
+
+                    <p>
+                        A productivity dashboard for managing tasks, notes,
+                        goals, and daily activity with persistent LocalStorage
+                        data and interactive statistics.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="dashboard"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="https://github.com/sondregiav/personal-dashboard"
+                            class="project-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 PROJECT 2
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/football-manager.png"
+                        alt="Football Manager game interface"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-meta">
+
+                        <span class="project-tag">
+                            Featured
+                        </span>
+
+                        <span class="project-tag">
+                            JavaScript Game
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Premier Manager
+                    </h3>
+
+
+                    <p>
+                        A browser-based football management game inspired by
+                        classic 1990s management simulators with team statistics,
+                        player management, and interactive game systems.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="football"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
+                            Live Demo ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 PROJECT 3
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript api"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/weather-app.png"
+                        alt="Weather application interface"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-meta">
+
+                        <span class="project-tag">
+                            API
+                        </span>
+
+                        <span class="project-tag">
+                            Async JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Weather App
+                    </h3>
+
+
+                    <p>
+                        A responsive weather application that retrieves live
+                        weather data using an external API and displays current
+                        conditions, forecasts, and location information.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>JavaScript</span>
+                        <span>Fetch API</span>
+                        <span>Async/Await</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="weather"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="https://github.com/sondregiav/weather-app"
+                            class="project-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 PROJECT 4
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript dashboard"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/todo-app.png"
+                        alt="Task Manager application interface"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-meta">
+
+                        <span class="project-tag">
+                            CRUD
+                        </span>
+
+                        <span class="project-tag">
+                            Productivity
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Task Manager
+                    </h3>
+
+
+                    <p>
+                        A task management application with task creation,
+                        editing, completion tracking, filtering, categories,
+                        priority levels, and LocalStorage persistence.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="todo"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="https://github.com/sondregiav/todo-list"
+                            class="project-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 PROJECT 5
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/calculator.png"
+                        alt="Calculator application interface"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-meta">
+
+                        <span class="project-tag">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Calculator App
+                    </h3>
+
+
+                    <p>
+                        A polished calculator application focused on clean
+                        interaction design, keyboard support, calculation logic,
+                        and responsive layout.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="calculator"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
+                            Live Demo ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 PROJECT 6
+            ========================================== -->
+
+            <article
+                class="project-card reveal"
+                data-category="javascript"
+            >
+
+                <div class="project-image">
+
+                    <img
+                        src="images/portfolio.png"
+                        alt="Portfolio website interface"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-meta">
+
+                        <span class="project-tag">
+                            Portfolio
+                        </span>
+
+                        <span class="project-tag">
+                            Responsive Design
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Developer Portfolio
+                    </h3>
+
+
+                    <p>
+                        A responsive personal portfolio designed to showcase
+                        front-end projects, technical skills, development
+                        experience, and professional contact information.
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="portfolio"
+                        >
+                            View Details
+                        </button>
+
+
+                        <a
+                            href="https://github.com/sondregiav/portfolio"
+                            class="project-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
 
 
         <!-- Contact -->
@@ -576,6 +1091,107 @@
 
 
     <script src="script.js"></script>
+<!-- =====================================================
+     PROJECT MODAL
+===================================================== -->
 
+<div
+    class="modal"
+    id="projectModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Close project details"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-body">
+
+            <div class="modal-project-image">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+            <span
+                class="section-label"
+                id="modalCategory"
+            >
+                Project
+            </span>
+
+
+            <h2 id="modalTitle">
+                Project Title
+            </h2>
+
+
+            <p
+                id="modalDescription"
+                class="modal-description"
+            >
+                Project description goes here.
+            </p>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Key Features
+                </h3>
+
+                <ul
+                    id="modalFeatures"
+                    class="modal-features"
+                >
+                </ul>
+
+            </div>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Technologies
+                </h3>
+
+                <div
+                    id="modalTechnologies"
+                    class="project-technologies"
+                >
+                </div>
+
+            </div>
+
+
+            <div
+                id="modalLinks"
+                class="modal-links"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
