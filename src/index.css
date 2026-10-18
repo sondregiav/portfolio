@@ -1,111 +1,235 @@
+/* Global CSS Foundation
+ * Minimal Scandinavian Developer Portfolio
+ * Light theme with accessible interactions and smooth motion
+ */
+
+/* ============================================================================
+   1. CSS CUSTOM PROPERTIES: Semantic color and typography system
+   ============================================================================ */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Color Palette */
+  --color-bg: #faf9f6;           /* Warm white background */
+  --color-text: #6b6375;          /* Muted gray text */
+  --color-text-strong: #20201e;   /* Near-black for headings and emphasis */
+  --color-border: #e5e4e7;        /* Subtle borders */
+  --color-code-bg: #f4f3ec;       /* Code block background */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Typography Stack */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Consolas, monospace;
 
-  font: 18px/145% var(--sans);
+  /* Responsive Base Font Size */
+  font-size: 18px;
+  line-height: 1.45;
   letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  :root {
     font-size: 16px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+/* ============================================================================
+   2. GLOBAL RESET: Box-sizing and foundational styles
+   ============================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+   3. HTML & BODY: Semantic defaults with motion preferences
+   ============================================================================ */
+
+html {
+  /* Smooth scrolling for better navigation experience */
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
   margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+/* ============================================================================
+   4. TYPOGRAPHY: Heading scales and text defaults
+   ============================================================================ */
 
 h1,
-h2 {
-  font-family: var(--heading);
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--color-text-strong);
+  margin: 0; /* Reset default margins; components set their own */
 }
 
+/* Proportional heading scale */
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-size: 2rem;     /* ~56px at base size */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-size: 1.33rem;  /* ~24px at base size */
+  line-height: 1.18;
+  letter-spacing: -0.01em;
 }
+
+h3 {
+  font-size: 1.1rem;   /* ~20px at base size */
+  line-height: 1.3;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;     /* ~18px at base size */
+  line-height: 1.4;
+}
+
 p {
-  margin: 0;
+  margin: 0; /* Reset default margins; let components space text */
 }
+
+/* ============================================================================
+   5. SEMANTIC HTML: Lists, code, and other elements
+   ============================================================================ */
 
 code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 }
 
 code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  padding: 0.25em 0.5em;
+  background-color: var(--color-code-bg);
+  border-radius: 4px;
+  color: var(--color-text-strong);
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1em;
+  background-color: var(--color-code-bg);
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* ============================================================================
+   6. INTERACTIVE ELEMENTS: Links, buttons, and focus states
+   ============================================================================ */
+
+/* Base link styles: minimal, no underline by default */
+a {
+  color: var(--color-text-strong);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:visited {
+  color: var(--color-text-strong);
+}
+
+/* Keyboard focus indicator: visible, subtle, accessible */
+a:focus-visible {
+  outline: 2px solid var(--color-text-strong);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Button base styles */
+button {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-text-strong);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Remove browser default button styles on form elements */
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-text-strong);
+  outline-offset: 2px;
+  border-color: var(--color-text-strong);
+}
+
+/* ============================================================================
+   7. UTILITY: Accessible visually-hidden content
+   ============================================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
