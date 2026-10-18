@@ -157,6 +157,11 @@ function App() {
                 demonstrating responsive design, accessible forms, and a
                 polished React interface.
               </p>
+              <img
+                className="project-preview"
+                src={`${import.meta.env.BASE_URL}images/nordlys-renhold-preview.png`}
+                alt="Screenshot of the Nordlys Renhold cleaning website concept, showing its Norwegian landing page, navigation, and call-to-action buttons."
+              />
               <a
                 className="button button-secondary"
                 href="https://sondregiav.github.io/nordlys-renhold/"
