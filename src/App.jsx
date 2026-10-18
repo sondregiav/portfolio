@@ -51,7 +51,7 @@ const projectSections = [
   'Contact',
 ]
 
-const projectTags = ['React', 'JavaScript', 'CSS', 'Responsive Design']
+const projectTags = ['React', 'JavaScript', 'CSS', 'Vite']
 
 const steps = [
   {
@@ -153,11 +153,18 @@ function App() {
               <p className="badge">Fictional concept project</p>
               <h3>Nordlys Renhold</h3>
               <p className="muted">
-                A planned landing page for a fictional cleaning company. It is a
-                concept created to show how I approach structure, clarity, and
-                responsive design. It is not a real client project, and there is
-                no live demo yet.
+                A fictional Norwegian cleaning-company website concept
+                demonstrating responsive design, accessible forms, and a
+                polished React interface.
               </p>
+              <a
+                className="button button-secondary"
+                href="https://sondregiav.github.io/nordlys-renhold/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Demo
+              </a>
               <h4>Planned content</h4>
               <ul className="tag-list">
                 {projectSections.map((section) => (
