@@ -1,184 +1,429 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* Portfolio styles
+ * Mobile-first: base styles are for small screens,
+ * media queries at the bottom add wider layouts.
+ * Colour variables, fonts and heading defaults live in index.css.
+ */
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+/* ============================================================================
+   1. BASE
+   ============================================================================ */
+
+html {
+  overflow-x: hidden;
 }
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================================
+   2. ACCESSIBILITY
+   ============================================================================ */
+
+/* Hidden above the page until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-text-strong);
+  color: var(--color-bg);
+  transform: translateY(-120%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0.5rem);
+  outline: 2px solid var(--color-bg);
+  outline-offset: 2px;
+}
+
+/* Keeps anchored sections from hiding under the sticky header */
+.section,
+#main {
+  scroll-margin-top: 6rem;
+}
+
+/* ============================================================================
+   3. HEADER
+   ============================================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: var(--color-text-strong);
+}
+
+/* ============================================================================
+   4. HERO
+   ============================================================================ */
 
 .hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-#center {
+.hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 8vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+}
+
+.cta-group {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
 }
 
-#next-steps {
+/* ============================================================================
+   5. BUTTONS
+   ============================================================================ */
+
+.button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-text-strong);
+  border-radius: 4px;
+  font-weight: 500;
+  text-align: center;
+  overflow-wrap: anywhere;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button-primary {
+  background-color: var(--color-text-strong);
+  color: var(--color-bg);
+}
+
+.button-primary:hover {
+  background-color: transparent;
+  color: var(--color-text-strong);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--color-text-strong);
+}
+
+.button-secondary:hover {
+  background-color: var(--color-text-strong);
+  color: var(--color-bg);
+}
+
+/* ============================================================================
+   6. SECTIONS
+   ============================================================================ */
+
+.section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* The hero is the first section, so it needs no top border */
+.section.hero {
+  border-top: none;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+}
+
+.section-intro {
+  max-width: 36rem;
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================================
+   7. CARDS (services and pricing)
+   ============================================================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-bg);
+}
+
+.card h3 {
+  font-weight: 600;
+}
+
+.price {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================================
+   8. FEATURED PROJECT
+   ============================================================================ */
+
+.project {
+  max-width: 44rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--color-code-bg);
+}
+
+.project h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.project h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-text-strong);
+  border-radius: 999px;
+  color: var(--color-text-strong);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.tag-list {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.tag-list li {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-bg);
+  font-size: 0.9rem;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+/* ============================================================================
+   9. PROCESS
+   ============================================================================ */
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+  counter-reset: step;
+}
+
+.step {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  counter-increment: step;
+}
+
+.step::before {
+  content: '0' counter(step);
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   10. CONTACT
+   ============================================================================ */
+
+#contact {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#contact .button {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* ============================================================================
+   11. FOOTER
+   ============================================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-inner {
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
-  .logo {
-    height: 18px;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-text-strong);
+}
+
+/* ============================================================================
+   12. LARGER SCREENS
+   ============================================================================ */
+
+@media (min-width: 48rem) {
+  .container {
+    padding: 0 2rem;
   }
 
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .project {
+    padding: 2.5rem;
   }
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
+@media (min-width: 64rem) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+/* ============================================================================
+   13. REDUCED MOTION
+   ============================================================================ */
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+@media (prefers-reduced-motion: reduce) {
+  .skip-link,
+  .nav-list a,
+  .button,
+  .footer-links a {
+    transition: none;
   }
 }

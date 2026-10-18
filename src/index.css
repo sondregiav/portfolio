@@ -10,9 +10,9 @@
 :root {
   /* Color Palette */
   --color-bg: #faf9f6;           /* Warm white background */
-  --color-text: #6b6375;          /* Muted gray text */
-  --color-text-strong: #20201e;   /* Near-black for headings and emphasis */
-  --color-border: #e5e4e7;        /* Subtle borders */
+  --color-text-strong: #20201e;   /* Near-black primary text */
+  --color-text-muted: #6b6b66;    /* Secondary text, ~5:1 contrast on the background */
+  --color-border: #e4e2dc;        /* Subtle borders */
   --color-code-bg: #f4f3ec;       /* Code block background */
 
   /* Typography Stack */
@@ -22,7 +22,6 @@
   /* Responsive Base Font Size */
   font-size: 18px;
   line-height: 1.45;
-  letter-spacing: 0.18px;
 }
 
 @media (max-width: 1024px) {
@@ -46,9 +45,14 @@
    ============================================================================ */
 
 html {
-  /* Smooth scrolling for better navigation experience */
-  scroll-behavior: smooth;
   color-scheme: light;
+}
+
+/* Smooth scrolling only for users who have not asked for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Respect user's motion preferences */
@@ -70,7 +74,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  color: var(--color-text);
+  color: var(--color-text-strong);
   background-color: var(--color-bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -96,26 +100,26 @@ h6 {
 
 /* Proportional heading scale */
 h1 {
-  font-size: 2rem;     /* ~56px at base size */
+  font-size: 2rem;     /* Mobile-first base; scale up in App.css */
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.33rem;  /* ~24px at base size */
+  font-size: 1.33rem;
   line-height: 1.18;
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.1rem;   /* ~20px at base size */
+  font-size: 1.1rem;
   line-height: 1.3;
 }
 
 h4,
 h5,
 h6 {
-  font-size: 1rem;     /* ~18px at base size */
+  font-size: 1rem;
   line-height: 1.4;
 }
 
@@ -165,10 +169,6 @@ a {
   transition: color 0.2s ease;
 }
 
-a:visited {
-  color: var(--color-text-strong);
-}
-
 /* Keyboard focus indicator: visible, subtle, accessible */
 a:focus-visible {
   outline: 2px solid var(--color-text-strong);
@@ -203,11 +203,17 @@ textarea {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
-  color: var(--color-text);
+  color: var(--color-text-strong);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   padding: 0.5em;
   border-radius: 4px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
 }
 
 input:focus-visible,
