@@ -1,16 +1,42 @@
-# React + Vite
+# Sondre G. — Web Development Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive portfolio for Sondre G., showcasing website services for small and local businesses. It includes service and starting-price information, a project process, a featured fictional project, and contact details.
 
-Currently, two official plugins are available:
+## Services
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Quick improvements to existing websites, from **$60**
+- Landing pages, from **$270**
+- Website refreshes, from **$430**
 
-## React Compiler
+The portfolio's featured project is **Nordlys Renhold**, a fictional Norwegian cleaning-company website concept.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React 19
+- JavaScript
+- CSS
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+Requires Node.js 22.13.0 or newer in the 22.x release line, and npm.
+
+```sh
+npm ci
+npm run dev
+```
+
+Vite prints the local development URL in the terminal.
+
+## Available commands
+
+```sh
+npm run dev      # Start the development server
+npm run lint     # Run ESLint
+npm run build    # Create a production build in dist/
+npm run preview  # Preview the production build locally
+```
+
+## Deployment
+
+The site is deployed to GitHub Pages by the workflow in `.github/workflows/deploy.yml`, which builds the site and deploys it on pushes to `main` or a manual workflow run. Vite is configured with `/portfolio/` as the base path for the deployed site.
