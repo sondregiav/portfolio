@@ -19,7 +19,7 @@ The portfolio's featured project is **Nordlys Renhold**, a fictional Norwegian c
 
 ## Run locally
 
-Requires Node.js 22 and npm.
+Requires Node.js 22.13.0 or newer in the 22.x release line, and npm.
 
 ```sh
 npm ci
